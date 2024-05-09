@@ -22,9 +22,9 @@ with tab1:
   fig.add_shape(
     type="line",
     x0=0,
-    x1=len(df['section_chapter'].unique()), 
-    y0=10, 
-    y1=10, 
+    x1=len(df['section_chapter'], 
+    y0=9, 
+    y1=9, 
     line=dict(color="red", width=2),
 )
   st.plotly_chart(fig, theme=None, use_container_width=True)
