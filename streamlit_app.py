@@ -7,9 +7,15 @@ from scipy.stats import zscore
 
 df = pd.read_csv('digest_descriptives_merged_simple.csv')
 
+numeric_columns = df.select_dtypes(include=['number'])
+z_scores = zscore(numeric_columns)
+threshold = 3
+outlier_indices = (abs(z_scores) > threshold).any(axis=1)
+df_filtered = df[~outlier_indices]
+
 tab1, tab2 = st.tabs(["Tab 1", "Tab 2"])
 
 with tab1:
-  fig = px.box(df, x='section_chapter', y='gunning_fog')
+  fig = px.box(df_filtered, x='section_chapter', y='gunning_fog')
   fig.update_layout(xaxis_title='')
   st.plotly_chart(fig, theme=None, use_container_width=False)
