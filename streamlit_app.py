@@ -5,6 +5,8 @@ import plotly.express as px
 import pandas as pd
 from scipy.stats import zscore
 
+st.set_page_config(layout="wide")
+
 df = pd.read_csv('digest_descriptives_merged_simple.csv')
 
 numeric_columns = df.select_dtypes(include=['number'])
