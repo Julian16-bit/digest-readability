@@ -7,5 +7,4 @@ import pandas as pd
 df = pd.read_csv('digest_descriptives_merged_simple.csv')
 
 fig = px.box(df, x='section_chapter', y='gunning_fog')
-fig.show()
-                 
+st.plotly_chart(fig, theme=None, use_container_width=True)
