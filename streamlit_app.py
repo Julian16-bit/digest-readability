@@ -115,7 +115,7 @@ with tab2:
 with tab3:
   col1, col2 = st.columns(2)
   with col1:
-    fig = px.scatter(df2, x=df2.index, y='score')
+    fig = px.scatter(df2, x=df2.index, y='score', hover_data=['content'])
     st.plotly_chart(fig, theme=None, use_container_width=True)
   
     
