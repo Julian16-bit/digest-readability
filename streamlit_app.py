@@ -21,7 +21,7 @@ with tab1:
   fig.update_layout(xaxis_title='')
   fig.add_shape(
     type="line",
-    x0=0,
+    x0=-1,
     x1=len(df['section_chapter'].unique()),
     y0=9, 
     y1=9, 
