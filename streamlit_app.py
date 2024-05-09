@@ -110,6 +110,10 @@ with tab2:
       line=dict(color="red", width=2)
     )
     st.plotly_chart(fig, theme=None, use_container_width=True)
+
+with tab3:
+  col1, col2 = st.columns(2)
+  
     
     
   
