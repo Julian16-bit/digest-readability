@@ -120,6 +120,7 @@ with tab3:
   with col2:
     scores_bychapter = df2.groupby('section_chapter')['score'].mean().reset_index()
     fig = px.bar(scores_bychapter, x='section_chapter', y='score')
+    st.plotly_chart(fig, theme=None, use_container_width=True)
   
     
     
