@@ -10,6 +10,7 @@ st.set_page_config(layout="wide")
 
 df = pd.read_csv('digest_descriptives_merged_simple.csv')
 df1 = pd.read_csv('digest_descriptives_merged.csv')
+df2 = df = pd.read_csv('digest_descriptives_merged_simple_withscores.csv')
 
 def remove_outliers(df):
   numeric_columns = df.select_dtypes(include=['number'])
@@ -113,6 +114,9 @@ with tab2:
 
 with tab3:
   col1, col2 = st.columns(2)
+  with col1:
+    fig = px.scatter(df2, x=df2.index, y='score')
+    st.plotly_chart(fig, theme=None, use_container_width=True)
   
     
     
