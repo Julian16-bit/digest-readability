@@ -26,7 +26,15 @@ with tab1:
     y0=9, 
     y1=9, 
     line=dict(color="red", width=2)
-    )
+  )
+  fig.add_shape(
+    type="line",
+    x0=-1,
+    x1=len(df['section_chapter'].unique()),
+    y0=12, 
+    y1=12, 
+    line=dict(color="red", width=2)
+  )
   st.plotly_chart(fig, theme=None, use_container_width=True)
   
   
