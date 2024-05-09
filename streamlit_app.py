@@ -24,18 +24,24 @@ tab1, tab2, tab3, tab4 = st.tabs(["Gunning Fog", "Flesh Kincaid", "Similarity", 
 
 with tab1:
   st.markdown("<h1 style='text-align: center; margin-bottom: 50px'>Gunning Fox Index Comparison</h1>", unsafe_allow_html=True)
-  col1, col2 = st.columns(2)
+  col1, col2 = st.columns([0.5,0.5])
   with col1:
     df_filtered = remove_outliers(df)
-    fig = px.box(df_filtered, x='section_chapter', y='gunning_fog', title="Simplified Version")
-    fig.update_layout(xaxis_title='')
+    fig = px.box(
+      df_filtered, 
+      x='section_chapter', 
+      y='gunning_fog', 
+      title="Simplified Version",
+      height = 1000
+    )
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
     fig.add_shape(
       type="line",
       x0=-1,
       x1=len(df['section_chapter'].unique()),
       y0=9, 
       y1=9, 
-      line=dict(color="red", width=2)
+      line=dict(color="red", width=2),
     )
     fig.add_shape(
       type="line",
@@ -43,13 +49,19 @@ with tab1:
       x1=len(df['section_chapter'].unique()),
       y0=12, 
       y1=12, 
-      line=dict(color="red", width=2)
+      line=dict(color="red", width=2),
     )
     st.plotly_chart(fig, theme=None, use_container_width=True)
   with col2:
     df1_filtered = remove_outliers(df1)
-    fig = px.box(df1_filtered, x='section_chapter', y='gunning_fog', title="Original Version")
-    fig.update_layout(xaxis_title='')
+    fig = px.box(
+      df1_filtered, 
+      x='section_chapter', 
+      y='gunning_fog', 
+      title="Original Version",
+      height = 1000
+    )
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -73,8 +85,14 @@ with tab2:
   col1, col2 = st.columns(2)
   with col1:
     df_filtered = remove_outliers(df)
-    fig = px.box(df_filtered, x='section_chapter', y='flesch_kincaid_grade', title="Simplified Version")
-    fig.update_layout(xaxis_title='')
+    fig = px.box(
+      df_filtered, 
+      x='section_chapter', 
+      y='flesch_kincaid_grade', 
+      title="Simplified Version",
+      height = 1000
+    )
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -94,8 +112,14 @@ with tab2:
     st.plotly_chart(fig, theme=None, use_container_width=True)
   with col2:
     df1_filtered = remove_outliers(df1)
-    fig = px.box(df1_filtered, x='section_chapter', y='flesch_kincaid_grade', title="Original Version")
-    fig.update_layout(xaxis_title='')
+    fig = px.box(
+      df1_filtered, 
+      x='section_chapter', 
+      y='flesch_kincaid_grade', 
+      title="Original Version",
+      height = 1000
+    )
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -118,12 +142,19 @@ with tab3:
   st.markdown("<h1 style='text-align: center; margin-bottom: 50px'>Semantic Similarity: Original vs Simplified</h1>", unsafe_allow_html=True)
   col1, col2 = st.columns(2)
   with col1:
-    fig = px.scatter(df2, x=df2.index, y='score', title="Individual Score")
+    fig = px.scatter(df2, x=df2.index, y='score', title="Individual Score", height = 1000)
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
     st.plotly_chart(fig, theme=None, use_container_width=True)
   with col2:
     scores_bychapter = df2.groupby('section_chapter')['score'].mean().reset_index()
-    fig = px.bar(scores_bychapter, x='section_chapter', y='score', title="Mean Score by Chapter")
-    fig.update_layout(xaxis_title='')
+    fig = px.bar(
+      scores_bychapter, 
+      x='section_chapter', 
+      y='score', 
+      title="Mean Score by Chapter",
+      height = 1000
+    )
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with tab4:
