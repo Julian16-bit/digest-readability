@@ -19,25 +19,27 @@ df_filtered = df[~outlier_indices]
 tab1, tab2 = st.tabs(["Tab 1", "Tab 2"])
 
 with tab1:
-  fig = px.box(df_filtered, x='section_chapter', y='gunning_fog')
-  fig.update_layout(xaxis_title='')
-  fig.add_shape(
-    type="line",
-    x0=-1,
-    x1=len(df['section_chapter'].unique()),
-    y0=9, 
-    y1=9, 
-    line=dict(color="red", width=2)
-  )
-  fig.add_shape(
-    type="line",
-    x0=-1,
-    x1=len(df['section_chapter'].unique()),
-    y0=12, 
-    y1=12, 
-    line=dict(color="red", width=2)
-  )
-  st.plotly_chart(fig, theme=None, use_container_width=True)
+  col1, col2 = st.columns(2)
+  with col1: 
+    fig = px.box(df_filtered, x='section_chapter', y='gunning_fog')
+    fig.update_layout(xaxis_title='')
+    fig.add_shape(
+      type="line",
+      x0=-1,
+      x1=len(df['section_chapter'].unique()),
+      y0=9, 
+      y1=9, 
+      line=dict(color="red", width=2)
+    )
+    fig.add_shape(
+      type="line",
+      x0=-1,
+      x1=len(df['section_chapter'].unique()),
+      y0=12, 
+      y1=12, 
+      line=dict(color="red", width=2)
+    )
+    st.plotly_chart(fig, theme=None, use_container_width=True)
   
   
 
