@@ -19,7 +19,9 @@ df_filtered = df[~outlier_indices]
 tab1, tab2 = st.tabs(["Tab 1", "Tab 2"])
 
 with tab1:
-  fig = px.box(df_filtered, x='section_chapter', y='gunning_fog')
+  max_length = 15  # Maximum length of the chapter name to display
+  df['truncated_chapter'] = df['section_chapter'].str.slice(0, max_length)
+  fig = px.box(df_filtered, x='truncated_chapter', y='gunning_fog')
   fig.update_layout(xaxis_title='')
   fig.add_shape(
     type="line",
