@@ -25,7 +25,7 @@ with tab1:
     x1=len(df['section_chapter'].unique()), 
     y0=10, 
     y1=10, 
-    line=dict(color="red", width=2, dash="dash"),
+    line=dict(color="red", width=2),
 )
   st.plotly_chart(fig, theme=None, use_container_width=True)
   
