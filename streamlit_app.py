@@ -19,7 +19,7 @@ def remove_outliers(df):
   df_filtered = df[~outlier_indices]
   return df_filtered
 
-tab1, tab2 = st.tabs(["Gunning Fog", "Flesh Kincaid", "Similarity"])
+tab1, tab2, tab3 = st.tabs(["Gunning Fog", "Flesh Kincaid", "Similarity"])
 
 with tab1:
   col1, col2 = st.columns(2)
