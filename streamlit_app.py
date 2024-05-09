@@ -11,7 +11,7 @@ st.set_page_config(layout="wide")
 df = pd.read_csv('digest_descriptives_merged_simple.csv')
 df1 = pd.read_csv('digest_descriptives_merged.csv')
 
-def remove_outliers(df)
+def remove_outliers(df):
   numeric_columns = df.select_dtypes(include=['number'])
   z_scores = zscore(numeric_columns)
   threshold = 3
