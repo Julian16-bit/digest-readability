@@ -61,7 +61,7 @@ with tab1:
       title="Original Version",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 20, margin_r=20)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -92,7 +92,7 @@ with tab2:
       title="Simplified Version",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 20, margin_r=20)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -119,7 +119,7 @@ with tab2:
       title="Original Version",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 20, margin_r=20)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -143,7 +143,7 @@ with tab3:
   col1, col2 = st.columns(2)
   with col1:
     fig = px.scatter(df2, x=df2.index, y='score', title="Individual Score", height = 1000)
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 20, margin_r=20)
     st.plotly_chart(fig, theme=None, use_container_width=True)
   with col2:
     scores_bychapter = df2.groupby('section_chapter')['score'].mean().reset_index()
@@ -154,7 +154,7 @@ with tab3:
       title="Mean Score by Chapter",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 10, margin_r=10)
+    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 20, margin_r=20)
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with tab4:
