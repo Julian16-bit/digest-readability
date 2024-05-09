@@ -44,7 +44,7 @@ with tab1:
       line=dict(color="red", width=2)
     )
     st.plotly_chart(fig, theme=None, use_container_width=True)
-  with col2:
+  # with col2:
     
   
   
