@@ -23,6 +23,7 @@ def remove_outliers(df):
 tab1, tab2, tab3 = st.tabs(["Gunning Fog", "Flesh Kincaid", "Similarity"])
 
 with tab1:
+  st.title('This is a title')
   col1, col2 = st.columns(2)
   with col1:
     df_filtered = remove_outliers(df)
