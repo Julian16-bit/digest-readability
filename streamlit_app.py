@@ -9,18 +9,22 @@ import matplotlib.pyplot as plt
 st.set_page_config(layout="wide")
 
 df = pd.read_csv('digest_descriptives_merged_simple.csv')
+df1 = pd.read_csv('digest_descriptives_merged.csv')
 
-numeric_columns = df.select_dtypes(include=['number'])
-z_scores = zscore(numeric_columns)
-threshold = 3
-outlier_indices = (abs(z_scores) > threshold).any(axis=1)
-df_filtered = df[~outlier_indices]
+def remove_outliers(df)
+  numeric_columns = df.select_dtypes(include=['number'])
+  z_scores = zscore(numeric_columns)
+  threshold = 3
+  outlier_indices = (abs(z_scores) > threshold).any(axis=1)
+  df_filtered = df[~outlier_indices]
+  return df_filtered
 
 tab1, tab2 = st.tabs(["Tab 1", "Tab 2"])
 
 with tab1:
   col1, col2 = st.columns(2)
-  with col1: 
+  with col1:
+    df_filtered = remove_outliers(df)
     fig = px.box(df_filtered, x='section_chapter', y='gunning_fog')
     fig.update_layout(xaxis_title='')
     fig.add_shape(
@@ -40,6 +44,8 @@ with tab1:
       line=dict(color="red", width=2)
     )
     st.plotly_chart(fig, theme=None, use_container_width=True)
+  with col2:
+    
   
   
 
