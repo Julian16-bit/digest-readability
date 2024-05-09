@@ -10,4 +10,4 @@ tab1, tab2 = st.tabs(["Tab 1)", "Tab 2"])
 
 with tab1:
   fig = px.box(df, x='section_chapter', y='gunning_fog')
-  st.plotly_chart(fig, theme=None, use_container_width=True)
+  st.plotly_chart(fig, theme=None, use_container_width=False)
