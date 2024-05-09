@@ -4,6 +4,7 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import pandas as pd
 from scipy.stats import zscore
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('digest_descriptives_merged_simple.csv')
 
@@ -19,3 +20,6 @@ with tab1:
   fig = px.box(df_filtered, x='section_chapter', y='gunning_fog')
   fig.update_layout(xaxis_title='')
   st.plotly_chart(fig, theme=None, use_container_width=True)
+  
+  
+
