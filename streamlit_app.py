@@ -119,7 +119,7 @@ with tab3:
     st.plotly_chart(fig, theme=None, use_container_width=True)
   with col2:
     scores_bychapter = df2.groupby('section_chapter')['score'].mean().reset_index()
-    fig = px.bar(data=scores_bychapter, x='section_chapter', y='score')
+    fig = px.bar(scores_bychapter, x='section_chapter', y='score')
   
     
     
