@@ -239,4 +239,3 @@ with tab5:
   st.write('Note: Gunning Fog Index puts more emphasis on the percentage of complex words (percentage of words with 3 or more syllables), while Flesch-Kincaid Grade Level focuses more on the average number of syllables per word.')
   st.header('Sentence Length', divider='gray')
   st.write('Generally, sentences should be 15-25 words for easier comprehension. Sentences longer than 40 words are likely hard to comprehend.')
-  st.header('Sentence Length', divider='gray')
