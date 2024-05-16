@@ -238,4 +238,4 @@ with tab5:
   st.write('Ideally, text should be written at a highschool level to be understood by the broad public.')
   st.write('Note: Gunning Fog Index puts more emphasis on the percentage of complex words (percentage of words with 3 or more syllables), while Flesch-Kincaid Grade Level focuses more on the average number of syllables per word.')
   st.header('Sentence Length', divider='gray')
-  st.write('Generally, sentences should be 15-25 words for easier comprehension. Sentences longer than 40 words are likely hard to comprehend.\n[Source](https://readabilityguidelines.co.uk/clear-language/simple-sentences/#:~:text=Oxford%20Guide%20to%20plain%20English%2C%20GOV.UK%20and%20linguists,40%20words%20sentences%20are%20hard%20to%20comprehend%20easily)')
+  st.write('Generally, sentences should be 15-25 words for easier comprehension. Sentences longer than 40 words are likely hard to comprehend.')
