@@ -34,7 +34,7 @@ with tab1:
       title="Simplified Version",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
+    fig.update_layout(xaxis_title='', yaxis=dict(range=[0, 45]), margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -50,6 +50,14 @@ with tab1:
       y0=12, 
       y1=12, 
       line=dict(color="red", width=2),
+    )
+    fig.add_shape(
+      type="line",
+      x0=-1,
+      x1=len(df['section_chapter'].unique()),
+      y0=df_filtered['gunning_fog'].mean(), 
+      y1=df_filtered['gunning_fog'].mean(), 
+      line=dict(color="yellow", width=2),
     )
     st.plotly_chart(fig, theme=None, use_container_width=True)
   with col2:
@@ -61,7 +69,7 @@ with tab1:
       title="Original Version",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
+    fig.update_layout(xaxis_title='', yaxis=dict(range=[0, 45]), margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -77,6 +85,14 @@ with tab1:
       y0=12, 
       y1=12, 
       line=dict(color="red", width=2)
+    )
+    fig.add_shape(
+      type="line",
+      x0=-1,
+      x1=len(df['section_chapter'].unique()),
+      y0=df1_filtered['gunning_fog'].mean(), 
+      y1=df1_filtered['gunning_fog'].mean(), 
+      line=dict(color="yellow", width=2),
     )
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
@@ -92,7 +108,7 @@ with tab2:
       title="Simplified Version",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
+    fig.update_layout(xaxis_title='', yaxis=dict(range=[0, 40]), margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
     fig.add_shape(
       type="line",
       x0=-1,
@@ -109,6 +125,14 @@ with tab2:
       y1=12, 
       line=dict(color="red", width=2)
     )
+    fig.add_shape(
+      type="line",
+      x0=-1,
+      x1=len(df['section_chapter'].unique()),
+      y0=df_filtered['flesch_kincaid_grade'].mean(), 
+      y1=df_filtered['flesch_kincaid_grade'].mean(), 
+      line=dict(color="yellow", width=2),
+    )
     st.plotly_chart(fig, theme=None, use_container_width=True)
   with col2:
     df1_filtered = remove_outliers(df1)
@@ -119,7 +143,7 @@ with tab2:
       title="Original Version",
       height = 1000
     )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
+    fig.update_layout(xaxis_title='', yaxis=dict(range=[0, 40]), margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
   
     fig.add_shape(
       type="line",
@@ -136,6 +160,14 @@ with tab2:
       y0=12, 
       y1=12, 
       line=dict(color="red", width=2)
+    )
+    fig.add_shape(
+      type="line",
+      x0=-1,
+      x1=len(df['section_chapter'].unique()),
+      y0=df1_filtered['flesch_kincaid_grade'].mean(), 
+      y1=df1_filtered['flesch_kincaid_grade'].mean(), 
+      line=dict(color="yellow", width=2),
     )
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
@@ -151,7 +183,7 @@ with tab3:
     title="Original Version",
     height = 1000
   )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
+    fig.update_layout(xaxis_title='', yaxis=dict(range=[0, 80]), margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
       
     fig.add_shape(
     type="line",
@@ -169,6 +201,14 @@ with tab3:
     y1=25, 
     line=dict(color="red", width=2)
   )
+    fig.add_shape(
+    type="line",
+    x0=-1,
+    x1=len(df['section_chapter'].unique()),
+    y0=df_filtered['sentence_length_mean'].mean(), 
+    y1=df_filtered['sentence_length_mean'].mean(), 
+    line=dict(color="yellow", width=2),
+    )
     st.plotly_chart(fig, theme=None, use_container_width=True)
   
   with col2:
@@ -180,7 +220,7 @@ with tab3:
     title="Original Version",
     height = 1000
   )
-    fig.update_layout(xaxis_title='',margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
+    fig.update_layout(xaxis_title='', yaxis=dict(range=[0, 80]), margin_b=400, margin_l = 40, margin_r=10, margin_t=50)
       
     fig.add_shape(
     type="line",
@@ -198,6 +238,14 @@ with tab3:
     y1=25, 
     line=dict(color="red", width=2)
   )
+    fig.add_shape(
+    type="line",
+    x0=-1,
+    x1=len(df['section_chapter'].unique()),
+    y0=df1_filtered['sentence_length_mean'].mean(), 
+    y1=df1_filtered['sentence_length_mean'].mean(), 
+    line=dict(color="yellow", width=2),
+    )
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
     
