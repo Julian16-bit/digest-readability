@@ -23,7 +23,7 @@ def remove_outliers(df):
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Gunning Fog", "Flesh Kincaid", "Sentence Length", "Similarity", "Info"])
 
 with tab1:
-  st.markdown("<h1 style='text-align: center; margin-bottom: 50px'>Gunning Fox Index Comparison</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; margin-bottom: 50px'>Gunning Fog Index Comparison</h1>", unsafe_allow_html=True)
   col1, col2 = st.columns([0.5,0.5])
   with col1:
     df_filtered = remove_outliers(df)
@@ -280,7 +280,7 @@ with tab4:
 
 with tab5:
   st.header('Context', divider='gray')
-  st.write('The simplified text was generated using gpt-3.5-turbo. \n\nThe prompt: \n"Your task is to rewrite the provided text so that it can easily be understood by a high school student. \nMake sure you include all the same information. Do not start your response with Text: or Answer: and do not use bullet points or any special formatting."')   
+  st.write('The simplified text was generated using gpt-3.5-turbo. \n\nThe prompt: \n"Your task is to rewrite the provided text so that it can easily be understood by a high school student. Make sure you include all the same information and keep the same formatting. Do not start your response with Text: or Answer:."')   
   st.header('Readability Indexes', divider='gray')
   st.write('The Gunning Fog Index and the Flesh Kincaid Grade Level are two common formulas used to assess the readability of text. The formulas estimate the years of education needed to read a text (i.e. an output of 9 predicts a grade 9 level reading ability).')
   st.write('Ideally, text should be written at a highschool level to be understood by the broad public.')
