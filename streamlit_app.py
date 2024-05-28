@@ -172,7 +172,7 @@ with tab2:
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
 with tab3:
-  st.markdown("<h1 style='text-align: center; margin-bottom: 50px'>Flesh Kincaid Grade Comparison</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; margin-bottom: 50px'>Sentence Length Comparison</h1>", unsafe_allow_html=True)
   col1, col2 = st.columns(2)
   with col1:
     df_filtered = remove_outliers(df)
